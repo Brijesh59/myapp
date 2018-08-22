@@ -1,0 +1,19 @@
+.jumbotron{
+  display: inline-block;
+  margin-top: 150px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+@media(max-width: 600px){
+  .jumbotron {
+    width: 70vw;
+    margin-left: 10vw;
+  }
+  .display-4 {
+    font-size: 2rem;
+  }
+  .jumbotron h3{
+    font-size: 1.4rem;
+  }
+}

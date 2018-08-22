@@ -1,0 +1,197 @@
+.header{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.message p{
+  background: #90EE90;
+  /* display: none; */
+  padding: 15px;
+  color: white;
+  font-size: 20px;
+}
+.contact{
+  color:grey;
+  width: 49%;
+  height: 100%;
+  float: left;
+  background: #FBFCFB;
+  padding: 25px;
+}
+h4{
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#username{
+  width:85%;
+  height: 50px;
+  padding: 10px;
+  outline: none;
+  margin-bottom: 15px;
+}
+#username:focus{
+  border: 1px solid #e65540;
+}
+#useremail{
+  width:85%;
+  height: 50px;
+  padding: 10px;
+  outline: none;
+  margin-bottom: 15px;
+}
+#useremail:focus{
+  border: 1px solid #e65540;
+}
+#usermessage{
+  width:85%;
+  padding: 10px;
+  outline: none;
+  margin-bottom: 15px;
+}
+#usermessage:focus{
+  border: 1px solid #e65540;
+}
+#submit-btn{
+  float: right;
+  margin-right: 80px;
+  width: 250px;
+  cursor: pointer;
+}
+#phone1{
+  margin-top: 45px;
+  margin-bottom: 15px;
+}
+#phone2{
+  margin-bottom: 50px;
+}
+#email{
+  padding-bottom: 5px;
+  border-bottom: 2px solid #EDB945;
+  width: 58%;
+  margin-bottom: 30px;
+}
+i{
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: 1s ease-in-out;
+}
+i:hover{
+  background: #f6c3bb;
+}
+.fab{
+  text-align: center;
+  line-height: 1.9;
+  color: black;
+}
+
+
+@media(max-width:600px){
+  .container{
+    min-height: 70vh;
+    width: 80vw;
+    padding-top: 0px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    /* background: pink; */
+    padding: 0;
+  }
+
+  .container .header h1 {
+    -webkit-clip-path: polygon(5% 0, 100% 0%, 95% 98%, 0% 100%);
+    background:  #555;
+    color: white;
+    padding: 10px;
+    width: 90vw;
+    margin-top: 110px;
+    font-size: 30px;
+  }
+  .container .contact{
+    width: auto;
+    margin-bottom: 20px;
+  }
+  .container .message{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  #queryForm{
+    display: block;
+    float: none;
+    margin-top: 40px;
+  }
+
+  #queryForm > input{
+    width: 80vw;
+  }
+  #usermessage{
+    width: 80vw;
+  }
+  #queryForm  #submit-btn{
+    width: 60vw;
+    margin-right: 40px;
+  }
+  #email {
+    width: 90%;
+  }
+  .successfile{
+    display: none;
+  }
+  .successMsg{
+    margin-left: 5vw;
+  }
+}
+
+
+
+@media(min-width: 601px){
+  .container{
+    /* background: pink; */
+    width: 80vw;
+    display: inline-block;
+    margin-top: 180px;
+    margin-left: 10%;
+    margin-bottom: 50px;
+  }
+  .container .header{
+    margin-top: -50px;
+  }
+  .container h1{
+    -webkit-clip-path: polygon(5% 0, 100% 0%, 95% 98%, 0% 100%);
+    background:  #555;
+    color: white;
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+  }
+  .container .contact{
+    color: grey;
+    width: 40%;
+    height: 100%;
+    float: left;
+    background: #FBFCFB;
+    padding: 25px;
+    margin-left: 3%;
+  }
+  .container .message{
+    /* display: inline-block; */
+    /* background: green; */
+    width: 43%;
+    height: 100%;
+    float: left;
+    margin-left: 2%;
+    padding-left: 2%;
+  }
+  .container textarea{
+    height: 165px;
+  }
+  #submit-btn{
+    float: right;
+    margin-right: 70px;
+    width: 250px;
+    cursor: pointer;
+  }
+}

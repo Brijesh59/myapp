@@ -1,0 +1,526 @@
+
+.sell{
+  width: 80%;
+  display: inline-block;
+  margin-top: 130px;
+  margin-left: 10%;
+  margin-bottom: 100px;
+}
+.header{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.message{
+  height: 100%;
+  float: left;
+  margin-left: 3%;
+}
+.contact{
+  color:grey;
+  width: 48%;
+  height: 100%;
+  float: left;
+  background: #FBFCFB;
+  padding: 25px;
+}
+.file {
+  position: relative;
+  overflow: hidden;
+  font-size: 15px;
+  width: 150px;
+}
+#file {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+select{
+  width: 400px;
+  margin: 5px 0;
+  height: 40px
+}
+option{
+  padding: 18px;
+}
+input{
+  /* width: 400px; */
+  margin: 5px 0;
+  padding: 8px;
+}
+textarea{
+  /* width: 400px; */
+  margin: 5px 0;
+  padding: 8px;
+}
+#submitBook{
+  width: 150px;
+  padding: 7px;
+  margin: 2px 10px;
+  border: 1px solid #e65540;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  outline: none;
+}
+#submitBook:hover{
+  background: #e65540;
+  color: white;
+}
+
+.contact img{
+  width:38%;
+  height: 17em;
+  display: inline-block;
+  float: left;
+}
+
+#categories{
+  background: #ccc;
+  height: 50px;
+  width: 60%;
+  margin: 10px 0px;
+  display: inline-block;
+  float: right;
+  padding: 10px;
+}
+#book-name{
+  background: #ccc;
+  height: 50px;
+  width: 60%;
+  margin: 10px 0px;
+  display: inline-block;
+  float: right;
+  padding: 10px;
+}
+#author-name{
+  background: #ccc;
+  height: 50px;
+  width: 60%;
+  margin: 10px 0px;
+  display: inline-block;
+  float: right;
+  padding: 10px;
+}
+#book-publisher{
+  background: #ccc;
+  height: 50px;
+  width: 60%;
+  margin: 10px 0px;
+  display: inline-block;
+  float: right;
+  padding: 10px;
+}
+#book-description{
+  background: #ccc;
+  height: 100px;
+  width: 100%;
+  margin: 10px 0px;
+  display: inline-block;
+  padding: 10px;
+}
+#book-mrp{
+  background: #ccc;
+  height: 50px;
+  width: 40%;
+  margin: 10px 0px;
+  display: inline-block;
+  padding: 10px;
+}
+#book-price{
+  background: #ccc;
+  height: 50px;
+  width: 40%;
+  margin: 10px 15px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.successMsg{
+  display: none;
+  margin-top: 150px;
+  margin-left: 50px;
+  background: #90EE90;
+  border-radius: 3px;
+  font-size: 20px;
+  width: 80%;
+  padding: 15px;
+  color: white;
+}
+.jumbotron{
+  display: none;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 18vh;
+}
+
+.newsletter{
+  display: block;;
+  width: 80%;
+}
+
+
+
+/* Loader */
+
+.spinner{
+  display: none;
+  margin-left: 42%;
+  margin-top: 22vh;
+}
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  outline: none;
+}
+.loader {
+  position: relative;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 2px;
+  width: 100px;
+  height: 100px;
+}
+.loader > div {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: #EB6D72;
+  transform: scale(0);
+  transform-origin: center center;
+  animation: loader 2s infinite linear;
+}
+.loader > div:nth-of-type(1), .loader > div:nth-of-type(5), .loader > div:nth-of-type(9) {
+  animation-delay: 0.4s;
+}
+.loader > div:nth-of-type(4), .loader > div:nth-of-type(8) {
+  animation-delay: 0.2s;
+}
+.loader > div:nth-of-type(2), .loader > div:nth-of-type(6) {
+  animation-delay: 0.6s;
+}
+.loader > div:nth-of-type(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes loader {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+
+@media(max-width: 600px){
+
+  .sell{
+    min-height: 80vh;
+    margin: 0;
+    /* background: blue; */
+    width: 90vw;
+    /* margin-left: 10vw; */
+    /* margin-right: 10vw; */
+  }
+  .header h1{
+    margin-top: 110px;
+    font-size: 25px;
+    margin-left: 30px;
+  }
+  #order h3 {
+    font-size: 20px;
+    margin: auto;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .sell .contact{
+    display: none;
+  }
+  .message{
+    width: 80vw;
+    margin-left: 10vw;
+    /* background: pink; */
+    /* display: none; */
+  }
+  .message input, textarea, select{
+    width: 80vw;
+    border: 1px solid #eee;
+  }
+  .message select{
+    width: 80vw;
+  }
+  .message textarea{
+    width: 80vw;
+  }
+  textarea{
+    height: 100px;
+  }
+  .file{
+    display: inline-block;
+    float: left;
+    width: 140px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  #submitBook{
+     display: inline-block;
+      float: left;
+      width: 110px;
+      margin-left: 20px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+  }
+
+  .successMsg{
+    margin-top:  -30px;
+    margin-left: 10vw;
+  }
+
+  .spinner{
+    margin-top: -100px;
+    margin-left: 25vw;
+  }
+
+}
+
+
+@media(min-width:601px) {
+  .sell{
+    width: 80%;
+    display: inline-block;
+    margin-top: 130px;
+    margin-left: 10%;
+    margin-bottom: 100px;
+  }
+  .header{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .message{
+    width: 49%;
+    height: 100%;
+    float: left;
+    margin-left: 3%;
+  }
+  .contact{
+    color:grey;
+    width: 48%;
+    height: 100%;
+    float: left;
+    background: #FBFCFB;
+    padding: 25px;
+  }
+  .file {
+    position: relative;
+    overflow: hidden;
+    font-size: 15px;
+    width: 150px;
+  }
+  #file {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+  select{
+    width: 400px;
+    margin: 5px 0;
+    height: 40px
+  }
+  option{
+    padding: 18px;
+  }
+  input{
+    width: 400px;
+    margin: 5px 0;
+    padding: 8px;
+  }
+  textarea{
+    width: 400px;
+    margin: 5px 0;
+    padding: 8px;
+  }
+  #submitBook{
+    width: 150px;
+    padding: 7px;
+    margin: 2px 10px;
+    border: 1px solid #e65540;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none;
+  }
+  #submitBook:hover{
+    background: #e65540;
+    color: white;
+  }
+
+  .contact img{
+    width:38%;
+    height: 17em;
+    display: inline-block;
+    float: left;
+  }
+
+  #categories{
+    background: #ccc;
+    height: 50px;
+    width: 60%;
+    margin: 10px 0px;
+    display: inline-block;
+    float: right;
+    padding: 10px;
+  }
+  #book-name{
+    background: #ccc;
+    height: 50px;
+    width: 60%;
+    margin: 10px 0px;
+    display: inline-block;
+    float: right;
+    padding: 10px;
+  }
+  #author-name{
+    background: #ccc;
+    height: 50px;
+    width: 60%;
+    margin: 10px 0px;
+    display: inline-block;
+    float: right;
+    padding: 10px;
+  }
+  #book-publisher{
+    background: #ccc;
+    height: 50px;
+    width: 60%;
+    margin: 10px 0px;
+    display: inline-block;
+    float: right;
+    padding: 10px;
+  }
+  #book-description{
+    background: #ccc;
+    height: 100px;
+    width: 100%;
+    margin: 10px 0px;
+    display: inline-block;
+    padding: 10px;
+  }
+  #book-mrp{
+    background: #ccc;
+    height: 50px;
+    width: 40%;
+    margin: 10px 0px;
+    display: inline-block;
+    padding: 10px;
+  }
+  #book-price{
+    background: #ccc;
+    height: 50px;
+    width: 40%;
+    margin: 10px 15px;
+    display: inline-block;
+    padding: 10px;
+  }
+
+  .successMsg{
+    display: none;
+    margin-top: 150px;
+    margin-left: 50px;
+    background: #90EE90;
+    border-radius: 3px;
+    font-size: 20px;
+    width: 80%;
+    padding: 15px;
+    color: white;
+  }
+  .jumbotron{
+    display: none;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 18vh;
+  }
+
+  .newsletter{
+    display: block;;
+    width: 80%;
+  }
+
+
+
+  /* Loader */
+
+  .spinner{
+    display: none;
+    margin-left: 42%;
+    margin-top: 22vh;
+  }
+  *, *::after, *::before {
+    box-sizing: inherit;
+  }
+  *, *:before, *:after {
+    box-sizing: border-box;
+    outline: none;
+  }
+  .loader {
+    position: relative;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 2px;
+    width: 100px;
+    height: 100px;
+  }
+  .loader > div {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: #EB6D72;
+    transform: scale(0);
+    transform-origin: center center;
+    animation: loader 2s infinite linear;
+  }
+  .loader > div:nth-of-type(1), .loader > div:nth-of-type(5), .loader > div:nth-of-type(9) {
+    animation-delay: 0.4s;
+  }
+  .loader > div:nth-of-type(4), .loader > div:nth-of-type(8) {
+    animation-delay: 0.2s;
+  }
+  .loader > div:nth-of-type(2), .loader > div:nth-of-type(6) {
+    animation-delay: 0.6s;
+  }
+  .loader > div:nth-of-type(3) {
+    animation-delay: 0.8s;
+  }
+
+  @keyframes loader {
+    0% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+    80% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+}

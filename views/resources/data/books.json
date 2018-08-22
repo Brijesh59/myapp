@@ -1,0 +1,20 @@
+[
+  {
+    "category": "engineering",
+    "description" : "Advance Mathematics Book by H.C Thaneja",
+    "id" : 1,
+    "price" : 700,
+    "quantity" : 10,
+    "thumbnail_url" : "https://www.ikbooks.com/uploads/BookImages/ikbooks-size200/9789382332640.jpg",
+    "title" : "Engineering Mathematics"
+  },
+  {
+    "category": "engineering",
+    "description" : "Computer Science",
+    "id" : 2,
+    "price" : 1000,
+    "quantity" : 10,
+    "thumbnail_url" : "https://qph.fs.quoracdn.net/main-qimg-b64721afbecfdf5c12b917c233c0490b-c",
+    "title" : "Introduction to Algorithms"
+  }
+]

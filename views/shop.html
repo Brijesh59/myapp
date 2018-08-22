@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="vendors/js/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="vendors/js/slick/slick-theme.css"/>
+  <link rel="stylesheet" href="vendors/js/animate.css" />
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/shop.css">
+  <link rel="stylesheet" href="resources/css/responsive.css">
+  <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+  <script src="https://jspm.io/system.js"></script>
+  <title>Book Kart</title>
+  <style>
+    .active{
+      color: #e65540;
+    }
+  </style>
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyApY1pWellvAiSubBlnR4ZW1XCHVon6M3M",
+      authDomain: "bookkart-9ecfd.firebaseapp.com",
+      databaseURL: "https://bookkart-9ecfd.firebaseio.com",
+      projectId: "bookkart-9ecfd",
+      storageBucket: "bookkart-9ecfd.appspot.com",
+      messagingSenderId: "354545326537"
+    };
+    firebase.initializeApp(config);
+  </script>
+</head>
+<body>
+
+  <!-- Section 1: Header Section -->
+
+  <nav class="navbar navbar-expand-md better-bootstrap-nav-left navbar-light bg-light fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_target" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a href="#" class="navbar-brand"><img src="resources/images/icons/logo.png" alt="" class="logo"></a>
+    <div class="collapse navbar-collapse" id="collapse_target">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="active nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="shop.html">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html">Sell</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cart">
+      <a class="nav-link " href="#" ><img src="resources/images/icons/icon-header-01.png" id="user_img"></a>
+      <a class="nav-link " href="checkout.html" ><span class="cart_items"><img src="resources/images/shopping-cart.svg" id="cart_img"><span class="cart-count">0</span></span></a>
+    </div>
+
+  </nav>
+
+  <div class="all-books">
+    <select name="bookCategory" id="book-category" onchange="showBooks(this.value)">
+      <option id="engineering">Engineering Books</option>
+      <option id="ncert">NCERT Textbooks</option>
+      <option id="medical">Medical Books</option>
+      <option id="novel">Novels</option>
+      <option id="iit">IIT-JEE Preparation Books</option>
+      <option id="law">Law</option>
+      <option id="gate">GATE Preparation Books</option>
+      <option id="comic">Comic Books</option>
+    </select>
+  </div>
+
+
+  <div class='search-bar'>
+  <div class='row'>
+    <div class='col-md-6'>
+      <div class='search-box'>
+        <form class='search-form'>
+          <input class='form-control' placeholder='Ex: Bookname, Authorname' type='text' id="searchedItem" autocomplete="off">
+          <button class='btn btn-link search-btn' type="submit">
+            <i class='fas fa-search'></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Categories-->
+  <div class="shop">
+    <div class="categories">
+      <aside>
+        <ul>
+          <a href="#"><li id="engineering" onclick = "showBooks(this)" >Engineering Books</li></a>
+          <a href="#"><li id="ncert" onclick = "showBooks(this)" >NCERT Textbooks</li></a>
+          <a href="#"><li id="medical" onclick = "showBooks(this)" >Medical Books</li></a>
+          <a href="#"><li id="novel" onclick = "showBooks(this)" >Novels</li></a>
+          <a href="#"><li id="iit" onclick = "showBooks(this)" >IIT-JEE Preparation Books</li></a>
+          <a href="#"><li id="law" onclick = "showBooks(this)" >Law</li></a>
+          <a href="#"><li id="gate" onclick = "showBooks(this)" >GATE Preparation Books</li></a>
+          <a href="#"><li id="comic" onclick = "showBooks(this)" >Comic Books</li></a>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="books-list" id="bookList">
+      <div class="spinner">
+       <div class="loader">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+       </div>
+     </div>
+    </div>
+    <div class="jumbotron">
+      <h4 class="display-6">Sorry No Books matched with searched item!</h4>
+      <p class="lead">We are adding more and more books to our library.</p>
+      <hr class="my-4">
+      <p>Suggest to add book to library.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button" id="suggest">Suggest</a>
+      </p>
+    </div>
+
+
+
+  <!--  Footer -->
+  <!-- <div class="footer">
+    <div class="copyright">Copyright © 2018 All rights reserved.</div>
+  </div> -->
+
+
+
+ <script type="text/javascript" src="https://viralpatel.net/blogs/demo/jquery/jquery.shorten.1.0.js"></script>
+ <script type="text/javascript" src="vendors/js/slick/slick.min.js"></script>
+ <script type="text/javascript" src="vendors/js/sweetalert/sweetalert.min.js"></script>
+ <script src="resources/js/firebaseAuth.js"> </script>
+ <script src="resources/js/fetchBooks.js"> </script>
+ <script src="resources/js/firebaseCart.js"> </script>
+ <script src="resources/js/script.js"> </script>
+ <script src="resources/js/search.js"> </script>
+
+</body>
+</html>

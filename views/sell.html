@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="vendors/js/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="vendors/js/slick/slick-theme.css"/>
+  <link rel="stylesheet" href="vendors/js/animate.css" />
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/sell.css">
+  <link rel="stylesheet" href="resources/css/responsive.css">
+
+  <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+  <script src="https://jspm.io/system.js"></script>
+  <title>Book Kart</title>
+  <style>
+    .active{
+      color: #e65540;
+    }
+  </style>
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyApY1pWellvAiSubBlnR4ZW1XCHVon6M3M",
+      authDomain: "bookkart-9ecfd.firebaseapp.com",
+      databaseURL: "https://bookkart-9ecfd.firebaseio.com",
+      projectId: "bookkart-9ecfd",
+      storageBucket: "bookkart-9ecfd.appspot.com",
+      messagingSenderId: "354545326537"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCA1vFg4xIYqULFMMr0GCmYIkCe6LM4xCE",
+      authDomain: "node-demo-project-9e66c.firebaseapp.com",
+      databaseURL: "https://node-demo-project-9e66c.firebaseio.com",
+      projectId: "node-demo-project-9e66c",
+      storageBucket: "",
+      messagingSenderId: "381282720040"
+    };
+    firebase.initializeApp(config);
+  </script> -->
+</head>
+<body>
+
+  <!-- Section 1: Header Section -->
+
+  <nav class="navbar navbar-expand-md better-bootstrap-nav-left navbar-light bg-light fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_target" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a href="#" class="navbar-brand"><img src="resources/images/icons/logo.png" alt="" class="logo"></a>
+    <div class="collapse navbar-collapse" id="collapse_target">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="shop.html">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html" class="active">Sell</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cart">
+      <a class="nav-link " href="#" ><img src="resources/images/icons/icon-header-01.png" id="user_img"></a>
+      <a class="nav-link " href="checkout.html" ><span class="cart_items"><img src="resources/images/shopping-cart.svg" id="cart_img"><span class="cart-count">0</span></span></a>
+    </div>
+
+  </nav>
+
+
+  <div class="sell">
+      <div class="header">
+        <h1 class="animated zoomIn"> SELL YOUR BOOKS</h1>
+      </div>
+      <div class="contact">
+        <img src="resources/images/thumb-item-03.jpg" alt="" id="sourceImg">
+        <div id="categories"><small>Type | </small><small id="booktype"></small></div>
+        <div id="book-name"><small>Name | </small><small id="bookName"></small></div>
+        <div id="author-name"><small>Author | </small><small id="authorName"></small></div>
+        <div id="book-publisher"><small>Publisher | </small><small id="bookpublisher"></small></div>
+        <div id="book-description"><small id="bookdescription"></small></div>
+        <div id="book-mrp"><small>MRP | </small><small id="bookmrp"></small></div>
+        <div id="book-price"><small>Price | </small><small id="bookprice"></small></div>
+      </div>
+      <div class="message">
+        <form method="POST" action="/sell" id="sellForm">
+          <select name="bookCategory" id="bookCategory" onchange="preview(this)">
+            <option>CATEGORIES</option>
+            <option value="Engineering Books">Engineering Books</option>
+            <option value="NCERT Textbooks">NCERT Textbooks</option>
+            <option value="Medical Books">Medical Books</option>
+            <option value="Novels">Novels</option>
+            <option value="IIT-JEE Preparation Books">IIT-JEE Preparation Books</option>
+            <option value="Law">Law</option>
+            <option value="GATE Preparation Books">GATE Preparation Books</option>
+            <option value="Comic Books">Comic Books</option>
+            <option value="Others">Others</option>
+          </select> <br />
+
+          <input type="text" placeholder="Book Name" name="bookname" id="bookname" required autocomplete="off" onchange="preview(this)" /><br/>
+          <input type="text" placeholder="Author Name" name="authorname" id="authorname" required autocomplete="off" onchange="preview(this)" /><br/>
+          <input type="text" placeholder="Publisher" name="publisher" id="publisher" required autocomplete="off" onchange="preview(this)" /><br/>
+          <textarea name="description" rows="5" cols="50" placeholder="Description" id="description" required autocomplete="off" onchange="preview(this)" /></textarea><br />
+          <input type="number" placeholder="MRP" name="mrp" id="mrp" required autocomplete="off" onchange="preview(this)" /><br/>
+          <input type="number" placeholder="Price" name="price" id="price"  autocomplete="off" onchange="preview(this)" required="required" /><br/>
+          <div class="file btn btn-lg btn-success">
+					  Upload Image
+					  <input type="file" name="file" id="file" onchange="readURL(this)" />
+					</div>
+          <input type="submit" id="submitBook" value="Submit">
+          <!-- <button type="button" id="submitBook">Submit</button> -->
+        </form>
+
+        <div class="spinner">
+          <div class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+        <div class="successMsg">
+          <p>Sell Request Made Successfully. We will contact you soon.</p>
+        </div>
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <h3 class="display-4">You are Not Signed in</h3>
+    <p class="lead">Please Sign in to sell your products</p>
+    <hr class="my-4">
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" role="button" onclick="signInWithGoogle()">Sign in</a>
+    </p>
+  </div>
+
+
+
+  <!-- Section 5: Footer -->
+  <div class="footer">
+    <div class="get-in-touch">
+      <h4>CONNECT WITH US</h4>
+      <span><a href="https://www.facebook.com/bookkart.co.in/" target="_blank"><i class="fab fa-facebook-f"></i></a></span>
+      <span><a href="https://www.instagram.com/bookkart.online/" target="_blank"><i class="fab fa-instagram"></i></a></span>
+      <span><a href="https://twitter.com/Bookkart1" target="_blank"><i class="fab fa-twitter"></i></a></span>
+      <span><a href="#"><i class="fab fa-youtube"></i></a></span>
+    </div>
+    <div>
+      <h4>DOWNLOAD APP</h4>
+      <ul>
+        <a href="https://play.google.com/store/apps/details?id=in.co.bookkart" target="_blank"><li><i class="fab fa-google-play"></i>Android App</li></a>
+      </ul>
+    </div>
+    <div>
+      <h4>LINKS</h4>
+      <ul>
+        <a href="shop.html"><li>Search</li></a>
+        <a href="about.html"><li>About Us</li></a>
+        <a href="contact.html"><li>Contact Us</li></a>
+      </ul>
+    </div>
+    <div>
+      <h4>NEWSLETTER</h4>
+      <input type="email" placeholder="example@email.com" class="newsletter" required>
+      <button class="subscribe">SUBSCRIBE</button>
+    </div>
+    <div class="copyright">Copyright © 2018 All rights reserved. Developed and Maintained by <a href="http://www.kumarbrijesh.com" target="_blank">Brijesh Kumar</a></div>
+  </div>
+
+
+
+ <script type="text/javascript" src="vendors/js/slick/slick.min.js"></script>
+ <script type="text/javascript" src="vendors/js/sweetalert/sweetalert.min.js"></script>
+ <script src="resources/js/firebaseAuth.js"> </script>
+ <script src="resources/js/script.js"> </script>
+ <script src="resources/js/sell.js"> </script>
+ </script>
+</body>
+</html>

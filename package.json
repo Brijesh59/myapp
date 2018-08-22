@@ -1,0 +1,19 @@
+{
+  "name": "bookkart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brijesh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap-sweetalert": "^1.0.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "firebase-admin": "^6.0.0",
+    "nodemailer": "^4.6.7"
+  }
+}

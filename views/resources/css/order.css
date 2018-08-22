@@ -1,0 +1,44 @@
+#order{
+  display: inline-block;
+  width: 40vw;
+  margin: 150px 30%;
+}
+
+#order h3{
+  background:  #555;
+  color: white;
+  margin: auto;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.btn{
+  margin-top: 10px;
+}
+
+input{
+  outline: none;
+  border: none;
+}
+input:focus{
+  outline: none;
+  border: none;
+}
+
+
+@media(max-width: 600px){
+  #order {
+    width: 80vw;
+    margin: 150px 10vw 0;
+    margin-bottom: 50px;
+  }
+}
+
+
+@media(min-width: 601px){
+  #order {
+    display: inline-block;
+    width: 40vw;
+    margin: 150px 30%;
+  }
+}

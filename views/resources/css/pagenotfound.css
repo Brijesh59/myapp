@@ -1,0 +1,45 @@
+body{
+  background: #22324D;
+  margin: 0;
+  padding: 0;
+}
+.container{
+  /* background: pink; */
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 20vh;
+  text-align: center;
+}
+
+.head{
+  color: white;
+  font-size: 40px;
+  font-weight: 900;
+}
+.main-body{
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  margin-left: 10%;
+}
+span{
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 188, 15, 0.8);
+}
+.go-home{
+  margin-top: -50px;
+  text-decoration: none;
+}
+.go-home button{
+  padding: 15px 50px;
+  border-radius: 9px;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  outline: none;
+  cursor: pointer;
+}
+.go-home button:hover{
+  border: 1px solid #FFBC0F;
+}
