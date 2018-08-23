@@ -31,14 +31,31 @@ function fetchCartItems(){
     }
     else{
       $(".spinner").css('display','none');
-      let checkoutDiv = document.createElement("div"); checkoutDiv.classList.add("checkoutDiv");
-      let h2 = document.createElement("h3"); h2.classList.add("checkoutDivHead");
+      swal({
+        icon: 'warning',
+        title: "Please Login First",
+        text: "Redirecting to home...",
+        button: false,
+        timer: 2000,
+      })
+      .then(()=>{
+        window.location = "/index.html";
+      });
 
-      h2.textContent = "Please Login First to view your Cart";
 
-      checkoutDiv.appendChild(h2);
-
-      parent.appendChild(checkoutDiv);
+      // let checkoutDiv = document.createElement("div"); checkoutDiv.classList.add("checkoutDiv");
+      // let h2 = document.createElement("h3"); h2.classList.add("checkoutDivHead");
+      //
+      // h2.textContent = "Please Login First to view your Cart";
+      //
+      // let btnlogin = document.createElement("button"); checkoutDiv.classList.add("btn-primary");
+      // btnlogin.textContent = "Login";
+      // btnlogin.setAttribute('onclick','signInWithGoogle()');
+      //
+      // checkoutDiv.appendChild(h2);
+      // h2.appendChild(btnlogin);
+      //
+      // parent.appendChild(checkoutDiv);
     }
   })
 }
